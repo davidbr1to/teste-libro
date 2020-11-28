@@ -16,12 +16,12 @@ class CreateMatriculasTable extends Migration
         Schema::create('matriculas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->UnsignedBigInteger('aluno_id');
-            $table->UnsignedBigInteger('curso_id');
+            $table->string('aluno_id')->Nullable();
+            $table->string('curso_id')->Nullable();
             $table->integer('cod_matricula')->unique();
 
-            $table->foreign('aluno_id')->references('id')->on('alunos');
-            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('aluno_id')->references('email')->on('alunos');
+            $table->foreign('curso_id')->references('titulo')->on('cursos');
 
         });
     }

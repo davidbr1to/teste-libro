@@ -10,4 +10,6 @@ class Aluno extends Model
     use HasFactory;
 
     protected $fillable = ['nome','email','sexo', 'data_nascimento'];
+    protected $primaryKey = 'email';
+    protected $keyType = 'string';
 }

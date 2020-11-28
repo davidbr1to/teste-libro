@@ -27,7 +27,7 @@ class AlunoController extends Controller
         $aluno = Aluno::find($id);
         $aluno->update($request->all());
 
-        return $article;
+        return $aluno;
     }
 
     public function delete(Request $request, $id)
